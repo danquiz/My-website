@@ -285,19 +285,17 @@ var rlight;
 var count=0;
 var len=questions.length-1;
 var arm =document.getElementById("arm");
-vat p=0;
 function nextq()
 {
     glight=document.getElementById("gl");
     rlight=document.getElementById("rl");
     rig=document.getElementById(questions[i].A5);
-    if((a==questions[i].A5) || p==0)
+    if(a==questions[i].A5)
     {
-        if((t==1 && u==1)||p==0)
+        if(t==1 && u==1)
         {
             correct.play();
-            if(p!=0)
-            {count++;}
+            count++;
             t=0;
             glight.style.display="block";
             rlight.style.display="none";
@@ -305,10 +303,7 @@ function nextq()
             a="op1";
             u=0;
         }
-        if(a==questions[i].A5 && p==0)
-        {
-            p=1;
-        }
+
     }
     else{
        
