@@ -324,6 +324,7 @@ var resultlight2=document.getElementById("rightlight");
 function getResult(){
         quizs.style.display="none";
         sresult.style.display="block";
+    arm.pause();
         getres.innerHTML=count;
         if(count<=(len/2)){
             resultlight1.style.backgroundColor="red";
