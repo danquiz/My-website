@@ -291,7 +291,7 @@ function nextq()
     glight=document.getElementById("gl");
     rlight=document.getElementById("rl");
     rig=document.getElementById(questions[i].A5);
-    if(a==questions[i].A5 || p==0)
+    if((a==questions[i].A5) || p==0)
     {
         if((t==1 && u==1)||p==0)
         {
