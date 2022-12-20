@@ -75,7 +75,7 @@ body{
     letter-spacing: 1px;
     margin: auto;
     width: max-content;
-  
+  margin-top : 30px;
     position: relative;
     top: 50px;
     font-weight: 900;
@@ -103,7 +103,7 @@ body{
     margin: 30px;
 }
 .head input{
-    margin-top: 40px;
+    margin-top: 5px;
     padding: 5px 10px;
     width: 200px;
     border-radius: 10px;
