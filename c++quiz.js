@@ -3,6 +3,9 @@ var audio1=document.getElementById("tumse");
 var audio2=document.getElementById("welldone");
 var submit =document.getElementById("submit");
 var next =document.getElementById("next");
+var correct_answer=document.getElementById("correct");
+var instruction = document.getElementById("instruction");
+
 let questions=[
     {
         Q1:"1. Which of the following user-defined header file extension used in c++?",
@@ -264,6 +267,7 @@ var clr;
 var rig;
 var t=1;
 var s=1;
+var u=0;
 function ans(id){
    
    pre1=a;
@@ -272,7 +276,7 @@ function ans(id){
     clr=document.getElementById(a)
     clr1.style.backgroundColor="rgb(213, 244, 234)";
     clr.style.backgroundColor="rgba(0, 128, 0, 0.372)";
-    
+    u=1;
     
 
 }
@@ -288,30 +292,32 @@ function nextq()
     rig=document.getElementById(questions[i].A5);
     if(a==questions[i].A5)
     {
-        if(t==1)
+        if(t==1 && u==1)
         {
+            correct.play();
             count++;
             t=0;
             glight.style.display="block";
             rlight.style.display="none";
             rig.style.backgroundColor="rgba(0, 128, 0, 0.372)";
             a="op1";
-            arm.play();
+            u=0;
         }
 
     }
     else{
        
        
-        if(t==1)
+        if(t==1 && u==1)
         {
+            arm.play();
             clr.style.backgroundColor="red";
             rig.style.backgroundColor="rgba(0, 128, 0, 0.372)";
             t=0;
             rlight.style.display="block";
             glight.style.display="none";
             a="op1";
-            arm.play();
+            u=0;
         }
     }
     
@@ -324,7 +330,6 @@ var resultlight2=document.getElementById("rightlight");
 function getResult(){
         quizs.style.display="none";
         sresult.style.display="block";
-    arm.pause();
         getres.innerHTML=count;
         if(count<=(len/2)){
             resultlight1.style.backgroundColor="red";
@@ -357,6 +362,7 @@ function resets(){
 }
 function nextqustion(){
     i++;
+    startQuiz();
     a="op1";
     if(i==((questions.length)-1))
     {
@@ -367,7 +373,20 @@ function nextqustion(){
     arm.pause();
     resets();
   
-    startQuiz();
+   
+}
+var iss = document.getElementById("iss");
+var iiclose = document.getElementById("iclose");
+function showInstruction(){
+    instruction.style.height="180px";
+    instruction.style.transition="0.6s ease";
+    iss.style.display="none";
+    iiclose.style.display="block";
+}
+function instclose(){
+    instruction.style.height="49px";
+    iss.style.display="block";
+    iiclose.style.display="none";
 }
 
 
