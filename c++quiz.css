@@ -111,9 +111,8 @@ body{
     outline: none;
 
     border: none;
-    background-color: black;
-    text-color:white;
-    color:white;
+    background-color: white;
+   
 }
 .head button{
     margin-top: 20px ;
